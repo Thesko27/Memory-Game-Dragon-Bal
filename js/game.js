@@ -99,14 +99,14 @@ const starTimer = () => {
     }, 1000);
 };
 
+const reloAd = () => {
+    window.location.reload();
+};
+restart.addEventListener("click", reloAd);
+
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem("player");
 
     starTimer();
     loadGame();
 };
-
-const reloAd = () => {
-    window.location.reload();
-};
-restart.addEventListener("click", reloAd);
