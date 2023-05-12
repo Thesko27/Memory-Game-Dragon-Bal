@@ -28,7 +28,7 @@ let secondCard = "";
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll(".desabled-card");
     if (disabledCards.length === 20) {
-        clearInterval(this.loop);
+        clearInterval(this.loOp);
         alert(
             `Parabéns, ${spanPlayer.innerHTML}! seu tempo foi: ${tiMer.innerHTML} `
         );
@@ -93,16 +93,11 @@ const loadGame = () => {
 };
 
 const starTimer = () => {
-    this.loop = setInterval(() => {
+    this.loOp = setInterval(() => {
         const currentTime = +tiMer.innerHTML;
         tiMer.innerHTML = currentTime + 1;
     }, 1000);
 };
-
-const reloAd = () => {
-    window.location.reload();
-};
-restart.addEventListener("click", reloAd);
 
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem("player");
@@ -110,3 +105,7 @@ window.onload = () => {
     starTimer();
     loadGame();
 };
+
+restart.addEventListener("click", (reloAd) => {
+    window.location.reload();
+});
